@@ -3,7 +3,7 @@ import { GlobalStyle } from "./GlobalStyle";
 import Header from "./components/Header/Header";
 import ExploreBoard from "./components/ExploreBoard";
 import HomeBoards from "./components/HomeBoards";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route , Redirect } from "react-router-dom";
 import axios from "axios";
 import AddMenu from "./components/AddMenu/AddMenu";
 
@@ -170,10 +170,13 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <Route exact path="/react-pinterest-clone">
+          <Redirect to="/react-pinterest-clone/home" />
+        </Route>
         {/* Header contains buttons for home button and personal boards button */}
         <Header />
         {/* Route into the homepage */}
-        <Route exact path="/">
+        <Route exact path="/react-pinterest-clone/home">
           {/* Displays addmenu component if addingState is true */}
           {addingState ? (
             <AddMenu
@@ -188,10 +191,11 @@ function App() {
             onAdd={handleOnAdd}
             setEGalleryQuery={setQueryTerm}
           />
+          <h1>Hello World</h1>
         </Route>
 
         {/* Route into personal boards */}
-        <Route path="/personal">
+        <Route path="/react-pinterest-clone/personal">
           {/* Displays the HomeBoard of images */}
           <HomeBoards
             hBGalleries={homeBoardGalleries}

@@ -10,11 +10,11 @@ const Header = () => {
       {/* Content Wrapper to organize the navigational components in the middle */}
       <Content>
         {/* Link Component of the react-router dom to add an anchor on the component it wraps around */}
-        <Link to="/">
+        <Link to="/react-pinterest-clone/home">
           {/* Logo Component containing logo image links to "/" route */}
           <Logo src={Image} />
         </Link>
-        <Link to="/personal">
+        <Link to="/react-pinterest-clone/personal">
           {/* Icon Wrapper for logo, links to "/personal" route */}
           <Icon>
             {/* CgProfile component from react-icons */}
